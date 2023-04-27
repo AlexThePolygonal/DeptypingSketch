@@ -1,0 +1,17 @@
+#!/bin/bash
+# compile debug
+
+#g++-12 -std=c++20 -Wall -Wextra -Wno-non-template-friend -pedantic -Werror -march=native -O2 -o __run__ main.cpp
+
+clang++-15 -std=c++20 -Wall -Wextra -pedantic -march=native -O2 -Wunused-parameter -o __run__ main.cpp
+
+endl=""
+args=""
+
+if test -f __run__
+then
+echo "It COMPILES! MUAHAHAHAHAHAHA"
+chmod 777 __run__
+echo "1" | ./__run__
+rm __run__;
+fi
